@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机文案 API - 免费多类型文案接口服务</title>
+    <meta name="keywords" content="随机文案,API接口,舔狗语录,情话,祖师爷文案,早安心语,晚安心语,免费API">
+    <meta name="description" content="免费提供多种类型随机文案API服务，包含祖师爷文案、舔狗语录、早安心语、晚安心语、情话等多种类型，支持JSON格式返回，稳定可靠的接口服务">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/categories.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/api-docs.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- 头部横幅区域 -->
+    <header class="hero">
+        <div class="container">
+            <h1>随机文案 API</h1>
+            <p>稳定可靠的多类型文案接口服务，为您的应用提供丰富多彩的内容支持</p>
+            <div class="hero-buttons">
+                <button class="btn primary" onclick="scrollToSection('api-docs')">开始使用</button>
+                <button class="btn secondary" onclick="scrollToSection('categories')">了解更多</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 文案类型区域 -->
+    <section class="categories">
+        <div class="container">
+            <h2>丰富多样的文案类型</h2>
+            
+            <div class="categories-grid">
+                <div class="category-item">
+                    <i class="fas fa-pray"></i>
+                    <span>祖师爷文案<span>TongJinCheng</span></span>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-dog"></i>
+                    <span>舔狗语录<span>TianGou</span></span>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>随机一言文案<span>Sentences</span></span>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>美句摘抄文案<span>MeiJuZhaiChao</span></span>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-sun"></i>
+                    <span>早安心语文案<span>Morning</span></span>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-drumstick-bite"></i>
+                    <span>疯狂星期四<span>KFCV50</span></span>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-moon"></i>
+                    <span>晚安心语文案<span>GoodNight</span></span>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-heart"></i>
+                    <span>土味情话<span>LoveWords</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 接口文档区域 -->
+    <section class="api-docs">
+        <div class="container">
+            <h2>接口文档</h2>
+            
+            <div class="api-content">
+                <div class="api-basic">
+                    <div class="api-item">
+                        <span class="label">接口地址</span>
+                        <code>https://api.ahfi.cn/api/randomText</code>
+                    </div>
+                    <div class="api-item">
+                        <span class="label">返回格式</span>
+                        <span class="value">JSON/TEXT</span>
+                    </div>
+                    <div class="api-item">
+                        <span class="label">请求方式</span>
+                        <span class="value">GET/POST</span>
+                    </div>
+                    <div class="api-item test-api">
+                        <span class="label">请求示例</span>
+                        <div class="api-test-container">
+                            <div class="api-input-group">
+                                <select id="typeSelect" class="api-select">
+                                    <option value="MeiJuZhaiChao">美句摘抄文案</option>
+                                    <option value="TongJinCheng">祖师爷文案</option>
+                                    <option value="TianGou">舔狗语录</option>
+                                    <option value="Sentences">随机一言文案</option>
+                                    <option value="Morning">早安心语文案</option>
+                                    <option value="KFCV50">疯狂星期四</option>
+                                    <option value="GoodNight">晚安心语文案</option>
+                                    <option value="LoveWords">土味情话</option>
+                                </select>
+                                <select id="formatSelect" class="api-select">
+                                    <option value="json">JSON</option>
+                                    <option value="text">TEXT</option>
+                                </select>
+                                <button id="testApi" class="api-test-btn">测试接口</button>
+                            </div>
+                            <code id="apiUrl">https://api.ahfi.cn/api/randomText?type=MeiJuZhaiChao&format=json</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-params">
+                    <h3>请求参数说明：</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>必填</th>
+                                <th>类型</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>type</td>
+                                <td>是</td>
+                                <td>string</td>
+                                <td>指定文案，如：TongJinCheng、TianGou、Sentences、Morning、MeiJuZhaiChao、LoveWords、KFCV50、GoodNight</td>
+                            </tr>
+                            <tr>
+                                <td>format</td>
+                                <td>否</td>
+                                <td>string</td>
+                                <td>返回数据的类型，可选值为 json 或 text。默认值为 json。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="api-response">
+                    <h3>返回参数说明：</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>类型</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>data.type</td>
+                                <td>string</td>
+                                <td>返回的指定的随机文案类型</td>
+                            </tr>
+                            <tr>
+                                <td>data.content</td>
+                                <td>string</td>
+                                <td>返回的文案内容</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="api-example">
+                    <h3>返回结果：</h3>
+                    <div class="api-result">
+                        <pre><code id="apiResult">点击上方"测试接口"按钮获取实时返回结果</code></pre>
+                        <button id="copyResult" class="copy-btn">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-code"></i>
+                        <span>随机文案 API</span>
+                    </div>
+                    <p class="footer-desc">致力于提供优质的文案接口服务，为您的创作赋能</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>快速导航</h4>
+                        <ul>
+                            <li><a onclick="scrollToSection('categories'); return false;">文案类型</a></li>
+                            <li><a onclick="scrollToSection('api-docs'); return false;">接口文档</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>联系我们</h4>
+                        <ul>
+                            <li><a href="mailto:ahfi@qq.com"><i class="fas fa-envelope"></i> Email</a></li>
+                            <li><a href="https://www.ahfi.cn" target="_blank"><i class="fas fa-blog"></i> 博客</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 随机文案 API. 让创意永不枯竭</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS 文件引入 -->
+    <script src="js/categories.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/api-test.js"></script>
+</body>
+</html> 

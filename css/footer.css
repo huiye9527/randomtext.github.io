@@ -1,0 +1,187 @@
+.footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 60px 0 30px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-info {
+    max-width: 400px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.footer-logo i {
+    font-size: 24px;
+    color: #00a1ff;
+}
+
+.footer-logo span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footer-desc {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.link-group h4 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.link-group h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #00a1ff;
+}
+
+.link-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.link-group li {
+    margin-bottom: 16px;
+}
+
+.link-group a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+}
+
+.link-group a:hover {
+    color: #00a1ff;
+    transform: translateX(5px);
+}
+
+.link-group i {
+    font-size: 16px;
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 20px 20px;
+        margin-top: 40px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-info {
+        max-width: 100%;
+    }
+
+    .footer-logo {
+        justify-content: flex-start;
+    }
+
+    .footer-desc {
+        font-size: 14px;
+    }
+
+    .footer-links {
+        gap: 30px;
+    }
+
+    .link-group h4 {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+
+    .link-group h4::after {
+        left: 0;
+        transform: none;
+    }
+
+    .link-group li {
+        margin-bottom: 12px;
+    }
+
+    .link-group a {
+        font-size: 14px;
+        justify-content: flex-start;
+    }
+
+    .footer-bottom {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+
+    .footer-bottom p {
+        font-size: 13px;
+    }
+}
+
+/* 小屏幕设备的额外优化 */
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 15px 15px;
+    }
+
+    .footer-content {
+        gap: 30px;
+    }
+
+    .footer-logo {
+        margin-bottom: 15px;
+    }
+
+    .footer-logo i {
+        font-size: 20px;
+    }
+
+    .footer-logo span {
+        font-size: 18px;
+    }
+
+    .link-group li {
+        margin-bottom: 10px;
+    }
+} 

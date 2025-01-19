@@ -1,0 +1,580 @@
+.api-docs {
+    background: #fff;
+}
+
+.api-content {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    padding: 40px;
+    margin-top: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.api-basic {
+    margin-bottom: 48px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.api-item {
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+}
+
+.api-item:last-child {
+    grid-column: 1 / -1;
+}
+
+.api-item:hover {
+    background: #f3f4f6;
+    transform: translateY(-2px);
+}
+
+.api-item .label {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    min-width: auto;
+}
+
+.api-item .value {
+    color: #2c3e50;
+    font-size: 15px;
+    font-weight: 500;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: block;
+    word-break: break-all;
+}
+
+.api-item code {
+    background: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #00a1ff;
+    font-family: monospace;
+    font-size: 15px;
+    word-break: break-all;
+    border: 1px solid rgba(0, 161, 255, 0.2);
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.api-params, .api-response {
+    margin-bottom: 48px;
+    padding: 24px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #eef0f2;
+}
+
+.api-params h3, .api-response h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.api-params h3::before, .api-response h3::before {
+    content: '';
+    width: 3px;
+    height: 18px;
+    background: #00a1ff;
+    border-radius: 2px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+th {
+    background: #f0f7ff;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 14px;
+    padding: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 14px 16px;
+    color: #4a5568;
+    font-size: 14px;
+    line-height: 1.6;
+    border-bottom: 1px solid #eef0f2;
+    vertical-align: top;
+}
+
+td:nth-child(2) {
+    color: #00a1ff;
+    font-weight: 500;
+}
+
+td:nth-child(3) {
+    font-family: monospace;
+    color: #666;
+}
+
+td:last-child {
+    line-height: 1.6;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.api-example {
+    padding: 0 24px;
+}
+
+.api-example pre {
+    background: #1a1a1a;
+    padding: 24px;
+    border-radius: 12px;
+    overflow-x: auto;
+    position: relative;
+}
+
+.api-example code {
+    color: #fff;
+    font-family: monospace;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+
+    .api-content {
+        padding: 24px 16px;
+        margin: 20px;
+        border-radius: 12px;
+    }
+
+    .api-basic {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .api-item {
+        padding: 16px;
+    }
+
+    .api-item .label {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .api-item .value,
+    .api-item code {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    .api-params, .api-response, .api-example {
+        padding: 0;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-radius: 6px;
+    }
+
+    th, td {
+        padding: 12px 16px;
+    }
+
+    .api-example pre {
+        padding: 16px;
+        font-size: 14px;
+    }
+}
+
+/* 添加复制按钮 */
+.api-item.copyable {
+    position: relative;
+}
+
+/* 删除或注释掉以下部分 */
+/*.api-item.copyable::after {
+    content: '复制';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #00a1ff;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.api-item.copyable:hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .api-item.copyable::after {
+        top: 16px;
+        right: 16px;
+    }
+}*/
+
+.api-test-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.api-input-group {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.api-select {
+    flex: 1;
+    height: 44px;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300a1ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+    padding-right: 40px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+    line-height: 44px;
+}
+
+.api-select:focus {
+    outline: none;
+    border-color: #00a1ff;
+    box-shadow: 0 2px 4px rgba(0, 161, 255, 0.1);
+}
+
+.api-test-btn {
+    height: 40px;
+    padding: 0 24px;
+    background: #00a1ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+}
+
+#apiUrl {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    background: #f5f7f9;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    word-break: break-all;
+    border: 1px solid #eee;
+}
+
+/* 移动端样式 */
+@media (max-width: 768px) {
+    .api-item.test-api {
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        margin: 0 -12px;
+    }
+
+    .api-test-container {
+        gap: 16px;
+    }
+
+    .api-input-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .api-select {
+        width: 100%;
+        height: 44px;
+        min-height: 44px;
+        line-height: 44px;
+        padding: 0 16px;
+        background-color: white;
+        border-color: #e6e6e6;
+        font-size: 14px;
+        margin: 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .api-test-btn {
+        width: 100%;
+        height: 44px;
+        min-height: 44px;
+        line-height: 44px;
+        padding: 0 24px;
+        font-weight: 500;
+        font-size: 15px;
+        border-radius: 8px;
+        background: #00a1ff;
+        box-shadow: 0 2px 4px rgba(0, 161, 255, 0.2);
+    }
+
+    .api-test-btn:active {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0, 161, 255, 0.1);
+    }
+
+    #apiUrl {
+        margin-top: 4px;
+        padding: 14px;
+        border-radius: 8px;
+        background: #f5f7f9;
+        font-size: 13px;
+        border-color: #eef0f2;
+    }
+}
+
+/* 移除所有可能导致抖动的过渡效果 */
+.api-select,
+.api-test-btn,
+.api-test-container,
+.api-input-group {
+    transition: none;
+}
+
+.api-result {
+    position: relative;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .api-item.test-api {
+        padding: 16px;
+        margin: 0;
+        width: 100%;
+    }
+
+    .api-test-container {
+        gap: 10px;
+        padding: 0;
+    }
+
+    .api-input-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .api-select {
+        width: 100%;
+        min-width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    .api-test-btn {
+        width: 100%;
+        min-width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    #apiUrl {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        word-break: break-all;
+    }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    @media (max-width: 768px) {
+        .api-item.test-api {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .api-select {
+            background-color: rgba(255, 255, 255, 0.98);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        #apiUrl {
+            background: rgba(0, 0, 0, 0.03);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .api-params, .api-response {
+        padding: 16px;
+        margin: 0 0 32px 0;
+        border-radius: 8px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border: 1px solid #eef0f2;
+        background: white;
+    }
+
+    /* 固定列样式优化 */
+    th:first-child,
+    td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 2;  /* 提高层级 */
+    }
+
+    th:first-child {
+        background: #f0f7ff;  /* 与表头背景色保持一致 */
+        border-right: 1px solid #eef0f2;
+    }
+
+    td:first-child {
+        background: white;
+        border-right: 1px solid #eef0f2;
+        /* 添加阴影效果，增强层次感 */
+        box-shadow: 6px 0 8px -6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 其他列样式 */
+    th, td {
+        padding: 12px;
+        font-size: 13px;
+        white-space: nowrap;  /* 防止文本换行 */
+        background: white;  /* 确保每个单元格都有背景色 */
+    }
+
+    th {
+        background: #f0f7ff;
+    }
+
+    /* 确保滚动时内容不会重叠 */
+    th:not(:first-child),
+    td:not(:first-child) {
+        z-index: 1;
+    }
+
+    /* 第一列（名称） */
+    th:first-child,
+    td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        min-width: 100px;
+        max-width: 100px;
+    }
+
+    /* 第二列（必填） */
+    th:nth-child(2),
+    td:nth-child(2) {
+        min-width: 60px;
+        max-width: 60px;
+    }
+
+    /* 第三列（类型） */
+    th:nth-child(3),
+    td:nth-child(3) {
+        min-width: 80px;
+        max-width: 80px;
+    }
+
+    /* 第四列（说明） */
+    th:last-child,
+    td:last-child {
+        min-width: 500px;
+        white-space: normal;  /* 允许说明文字换行 */
+    }
+
+    /* 确保表格内容可以横向滚动 */
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border: 1px solid #eef0f2;
+        background: white;
+        width: 100%;
+    }
+
+    /* 优化滚动体验 */
+    table::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    table::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+    }
+
+    table::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+    }
+} 
